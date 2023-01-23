@@ -3,10 +3,15 @@ import React from 'react';
 import {Grid, Card, Button, Box} from '@mui/material';
 import { useRouter } from 'next/router';
 import TrackList from 'components/TrackList';
+import { Itrack } from 'types/track';
+import { useTypedSelector } from 'hooks/useTypedSelector';
+import { useAction } from 'hooks/useAction';
 
-function index() {
+const Index = () => {
   const router = useRouter();
-  const tracks: ITrack[] = [
+  const {track, error} = useTypedSelector(state => state.track)
+  const {} = useAction()
+  const tracks: Itrack[] = [
     {_id: '1', name: "track1", artist: "artist", text: 'text', listens: 5, audio: "", picture: "", comments: []},
     {_id: '2', name: "track1", artist: "artist", text: 'text', listens: 5, audio: "", picture: "", comments: []},
     {_id: '3', name: "track1", artist: "artist", text: 'text', listens: 5, audio: "", picture: "", comments: []},
@@ -31,4 +36,4 @@ function index() {
   )
 }
 
-export default index;
+export default Index;
