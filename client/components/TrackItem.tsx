@@ -1,4 +1,5 @@
-import { PlayArrow } from "@mui/icons-material";
+import { Delete, Pause, PlayArrow } from "@mui/icons-material";
+import { Card, Grid, IconButton } from "@mui/material";
 import { useRouter } from "next/router";
 import React from "react";
 import { Itrack } from "types/track";
@@ -27,7 +28,7 @@ const TrackItem: React.FC = ({ track, active = false }) => {
       <IconButton onClick={play}>
         {!active ? <Pause /> : <PlayArrow />}
       </IconButton>
-      <img width={70} height={70} src={track.picture} />
+      <img width={70} height={70} src={'http://localhost:5000' + track.picture} />
       <Grid
         container
         direction="column"

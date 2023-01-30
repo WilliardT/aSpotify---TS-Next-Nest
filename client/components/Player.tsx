@@ -3,7 +3,6 @@ import { Grid, IconButton } from '@mui/material';
 import { useAction } from 'hooks/useAction';
 import { useTypedSelector } from 'hooks/useTypedSelector';
 import React, { useEffect } from 'react';
-import { Itrack } from 'types/track';
 import styles from '../styles/Player.module.scss';
 import TrackProgress from './TrackProgress';
 
@@ -24,7 +23,7 @@ const Player = () => {
 
   const setAudio = () => {
     if (active) {
-      audio.src = active.audio
+      audio.src = 'http://localhost:5000' + active.audio
       audio.volume = volume / 100
       audio.onloadedmetadata = () => {
         setDuration(Math.ceil(audio.duration))
